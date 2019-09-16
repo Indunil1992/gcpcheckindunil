@@ -1,0 +1,99 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "0bf391bb-894b-496f-b893-005bfd134757": {
+        "id": "0bf391bb-894b-496f-b893-005bfd134757",
+        "parent": null,
+        "name": "gcpcheckindunil",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "645f7a1e-0739-4b58-8795-da970f6f7d73"
+        ],
+        "isRemovable": false,
+        "filePath": "gcpcheckindunil"
+      },
+      "645f7a1e-0739-4b58-8795-da970f6f7d73": {
+        "id": "645f7a1e-0739-4b58-8795-da970f6f7d73",
+        "parent": "0bf391bb-894b-496f-b893-005bfd134757",
+        "name": "function.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "gcpcheckindunil/function.js",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8",
+          "timeout": 60,
+          "memory": 128,
+          "triggerType": 0
+        },
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ]
+      },
+      "4920de4c-07fa-417c-b75f-2995c764d0a5": {
+        "id": "4920de4c-07fa-417c-b75f-2995c764d0a5",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js",
+        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.gcpcheckindunilfunction = require(\"./gcpcheckindunil/function.js\").handler;"
+      },
+      "c03b404a-805f-4484-aa54-17d1c220e358": {
+        "id": "c03b404a-805f-4484-aa54-17d1c220e358",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py",
+        "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
+      }
+    },
+    "rootNode": "0bf391bb-894b-496f-b893-005bfd134757",
+    "openFiles": [
+      "645f7a1e-0739-4b58-8795-da970f6f7d73"
+    ],
+    "currentFileId": "645f7a1e-0739-4b58-8795-da970f6f7d73",
+    "resources": {
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "gcpcheckindunil",
+    "projectDescription": "test 16/9/2019",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east1",
+    "platform": "GCP",
+    "platformRegions": {},
+    "lastSave": 1568613810181
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "gcpcheckindunil",
+      "url": "https://github.com/Indunil1992/gcpcheckindunil"
+    }
+  }
+}
