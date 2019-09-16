@@ -1,4 +1,4 @@
-exports.handler = function(request, response) {
-    
-    response.send({"message": "Successfully C S executed"});
+exports.handler = function (event, context, callback) {
+
+    callback(null, { "message": "Successfully executed: Pub/Sub" });
 }

@@ -22,23 +22,18 @@
         "children": [],
         "isRemovable": true,
         "filePath": "gcpcheckindunil/function.js",
-        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully C S executed\"});\n}",
+        "code": "exports.handler = function (event, context, callback) {\n\n    callback(null, { \"message\": \"Successfully executed: Pub/Sub\" });\n}\n",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0,
+          "triggerType": 1,
           "handler": "handler"
         },
         "triggers": [
           {
-            "resourceName": "scheduler-trigger",
-            "config": {
-              "type": "",
-              "schedulePattern": "15 12 * * *",
-              "jobId": "test1",
-              "timezone": "Asia/Colombo"
-            }
+            "resourceName": "pubsubcloudBuilds",
+            "config": {}
           }
         ],
         "testCases": {
@@ -87,10 +82,16 @@
     ],
     "currentFileId": "645f7a1e-0739-4b58-8795-da970f6f7d73",
     "resources": {
-      "scheduler-trigger": {
-        "name": "scheduler-trigger",
-        "type": "scheduler-trigger",
-        "config": {}
+      "pubsubcloudBuilds": {
+        "name": "pubsubcloudBuilds",
+        "type": "pubsub",
+        "config": {
+          "mode": 1,
+          "topic": {
+            "name": "cloud-builds",
+            "subscriptions": []
+          }
+        }
       }
     },
     "customTemplate": {
@@ -120,7 +121,7 @@
     "platformRegions": {
       "AWS": "us-east-1"
     },
-    "lastSave": 1568616031707
+    "lastSave": 1568619909350
   },
   "VCS_STATE": {
     "provider": "GitHub",
