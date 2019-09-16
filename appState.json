@@ -22,19 +22,41 @@
         "children": [],
         "isRemovable": true,
         "filePath": "gcpcheckindunil/function.js",
-        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully C S executed\"});\n}",
         "config": {
           "runtime": "nodejs8",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0
+          "triggerType": 0,
+          "handler": "handler"
         },
         "triggers": [
           {
-            "resourceName": "http-trigger",
-            "config": {}
+            "resourceName": "scheduler-trigger",
+            "config": {
+              "type": "",
+              "schedulePattern": "15 12 * * *",
+              "jobId": "test1",
+              "timezone": "Asia/Colombo"
+            }
           }
-        ]
+        ],
+        "testCases": {
+          "4ec7e358-3b8e-4ecb-aea5-668aeaa7d8b5": {
+            "id": "4ec7e358-3b8e-4ecb-aea5-668aeaa7d8b5",
+            "name": "Test event",
+            "functionId": "645f7a1e-0739-4b58-8795-da970f6f7d73",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          },
+          "f46795dc-1ab0-4d9e-a47c-e1197c449b64": {
+            "id": "f46795dc-1ab0-4d9e-a47c-e1197c449b64",
+            "name": "Test event",
+            "functionId": "645f7a1e-0739-4b58-8795-da970f6f7d73",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
       },
       "4920de4c-07fa-417c-b75f-2995c764d0a5": {
         "id": "4920de4c-07fa-417c-b75f-2995c764d0a5",
@@ -65,9 +87,9 @@
     ],
     "currentFileId": "645f7a1e-0739-4b58-8795-da970f6f7d73",
     "resources": {
-      "http-trigger": {
-        "name": "http-trigger",
-        "type": "http-trigger",
+      "scheduler-trigger": {
+        "name": "scheduler-trigger",
+        "type": "scheduler-trigger",
         "config": {}
       }
     },
@@ -75,7 +97,16 @@
       "dialect": null,
       "definitions": null
     },
-    "envVariables": [],
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "AWS_REGION",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
     "packageJSON": {
       "dependencies": {}
     }
@@ -86,8 +117,10 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east1",
     "platform": "GCP",
-    "platformRegions": {},
-    "lastSave": 1568613810181
+    "platformRegions": {
+      "AWS": "us-east-1"
+    },
+    "lastSave": 1568616031707
   },
   "VCS_STATE": {
     "provider": "GitHub",
